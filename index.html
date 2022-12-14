@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <title>shoppingly.com</title>
+    <style>
+        * {
+            text-align: center;
+            /* background-color: #FAFAFA; */
+        }
+
+        img {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        /* nav bar here*/
+        #nav {
+            background-color: #78909C;
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            overflow: hidden;
+            position: fixed;
+            top: 0%;
+            width: 98%;
+        }
+
+        input {
+            width: 70%;
+            border-radius: 0px 20px 20px 0px;
+            border: none;
+        }
+
+        select {
+            width: 25%;
+
+            border-radius: 20px 0px 0px 20px
+        }
+
+        #search {
+            height: 40px;
+            width: 40px;
+            margin-right: 50px;
+        }
+
+        #logo {
+            width: 150%;
+            height: 100%;
+        }
+
+        #subnav {
+            width: 90%;
+            margin-top: 1%;
+        }
+
+        #subnav>div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5%;
+        }
+
+        #subnav>div:nth-child(2) {
+            display: flex;
+        }
+
+        #subnav>div>input {
+            text-align: center;
+        }
+
+        a {
+            margin-right: 4%;
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* fotter here */
+        #fotter {
+            background-color: #546E7A;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #about,
+        #poli {
+            display: flex;
+            /* justify-content: space-evenly; */
+        }
+
+        #body div:nth-child(3) {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+        }
+
+        #body div:nth-child(3)>div>img {
+            height: 90%;
+            width: 80%;
+        }
+
+        #body div:nth-child(7) {
+            width: 97%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+        }
+
+        #body div:nth-child(7)>img {
+            width: 20%;
+            height: 10%;
+            margin: 1%;
+        }
+
+        #body div:nth-child(9) {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+        }
+
+        #body2 {
+            background-color: #ECEFF1;
+        }
+
+        #s {
+            width: 150px;
+            height: 150px;
+            background-color: #ECEFF1;
+        }
+
+        #body2 div:nth-child(1) {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            background-color: white;
+            margin-top: 50px;
+            padding: 50px;
+            /* margin: 30px;
+            border: 25px solid #CFD8DC; */
+        }
+
+        #body2 div:nth-child(2) {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            background-color: white;
+            margin-top: 50px;
+            padding: 50px;
+        }
+
+        #body2 div:nth-child(4) {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+
+        }
+
+        #body2 div:nth-child(4)>img {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+        }
+
+        #offer {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            background-color: white;
+            margin: 50px;
+            padding: 50px;
+        }
+
+        #offer>img {
+            margin: 9px;
+        }
+
+        /* slider */
+        #slider {
+            width: 100%;
+            height: 500px;
+            margin-top: 19px;
+        }
+
+        /* carosla */
+        .main-carousel {
+            width: 100%;
+            margin-right: 10px;
+            height: 300px;
+            display: block;
+        }
+
+        .carousel-cell:before {
+            display: block;
+        }
+
+        .carousel-cell>img {
+            height: 100%;
+        }
+
+        /* product page */
+        #pro1,
+        #pro2,
+        #pro3,
+        #pro4 {
+            display: flex;
+            justify-content: space-evenly;
+            width: 90%;
+            margin: auto;
+            background-color: #ECEFF1;
+        }
+
+        #pro1>div>img,
+        #pro2>div>img,
+        #pro3>div>img,
+        #pro4>div>img {
+            width: 100%;
+            height: 60%;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        #pro1>div,
+        #pro2>div,
+        #pro3>div,
+        #pro4>div {
+            width: 30%;
+            height: 500px;
+            margin: 1%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 0px 0px 10px 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav bar here -->
+    <nav id="nav">
+        <div id="logo_div">
+            <img src="./img/Shoppingly-removebg-preview.png" alt="nnot" id="logo">
+        </div>
+        <div id="subnav">
+            <div>
+                <select name="" id="filter">
+                    <option value="">All Department</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="makeup">Makeup</option>
+                    <option value="Vitamin">Vitamin</option>
+                </select>
+                <input type="text" placeholder="Search Product Here......">
+                <img src="https://img.icons8.com/ios/2x/search.png" alt="" id="search">
+            </div>
+            <div id="links">
+                <a href="./index.html">Home</a>
+                <a href="./jewelry.html">Jewelry</a>
+                <a href="./beauty.html">Beauty</a>
+                <a href="./makeup.html">MakeUps</a>
+                <a href="./Vitamins.html">Vitamins</a>
+                <a href="./sign.html">Sign Up</a>
+                <a href="./cart.html">Cart</a>
+            </div>
+        </div>
+    </nav>
+    <!-- body first part -->
+    <div id="body">
+        <div>
+            <h3 style="margin-top: 150px;">$ 10045 cashback Dispersed throw ourweb</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/shop-gbr-102789-holiday-hot-toys-banners-1600x300-img-min1669996056936.jpg"
+                alt="" style="width: 100%;">
+        </div>
+        <div>
+            <div><img src="https://img.shop.com/Image/departments/Beauty.jpg" alt=""></div>
+            <div><img src="https://img.shop.com/Image/homepage/stocking-stuffers-media-300x250-img1669837197571.jpg"
+                    alt=""></div>
+            <div>
+                <h2>Sign Up Here</h2>
+                <button>Sign Up</button>
+            </div>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/shop-us-105060-holiday-egift-cards-banners-600x600-img-min1670878325117.jpg"
+                alt="" id="sp3">
+        </div>
+        <!-- slider -->
+        <img src="https://img.freepik.com/free-vector/christmas-sale-banner-with-realistic-decoration-golden-rose_1361-3050.jpg?size=626&ext=jpg"
+            alt="" id="slider">
+        <h1>Popular Brands</h1>
+        <div id="brands">
+            <img src="https://img.shop.com/Image/homepage/nike_140x110-img.gif" alt="">
+            <img src="https://img.shop.com/Image/homepage/michaelkors_140x110-img.gif" alt="">
+            <img src="https://img.shop.com/Image/homepage/coach_brand7.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/adidaslogo_140_1100.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/cuisinart.gif" alt="">
+        </div>
+        <h1>Spacial offers</h1>
+        <div id="sp1">
+            <img src="https://img.shop.com/Image/homepage/us-eng-jcpenney-50p-hp-nov221669752610403.jpeg" alt="">
+            <img src="https://img.shop.com/Image/homepage/us-eng-macys-20poffgifts-hp-dec221670435068951.jpeg" alt="">
+            <img src="https://img.shop.com/Image/homepage/us-eng-nike-hp-dec221670866755445.jpeg" alt="">
+        </div>
+    </div>
+    <!-- body offer part -->
+    <div id="body2">
+        <div id="sp2">
+            <img src="https://img.shop.com/Image/homepage/oldnavy-media-feb221670437394495.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/us-eng-bbb-memorialday-media-may211670870263691.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/shop-en-us-Marshalls-FreeShip-300x2501668727246227-img.jpg"
+                alt="">
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/giftsforher-media1664553609405.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/giftsforhim-media1664553622036.jpg" alt="">
+            <img src="https://img.shop.com/Image/homepage/giftsforteens-media1664553627912.jpg" alt="">
+        </div>
+        <h3>Gift Ideas</h3>
+        <div>
+            <img src="https://img.shop.com/Image/240000/243400/243406/products/1947692115.jpg?plain&size=400x400"
+                alt="">
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1869987733.jpg?plain&size=300x300"
+                alt="">
+            <img src="https://img.shop.com/Image/260000/266700/266794/products/1920614672.jpg?plain&size=300x300"
+                alt="">
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1942133519.jpg?plain&size=1600x1600"
+                alt="">
+            <img src="https://img.shop.com/Image/240000/248600/248698/products/1766653370.jpg?plain&size=300x300"
+                alt="">
+            <img src="https://img.shop.com/Image/280000/287000/287062/products/1942108864.jpg?plain&size=300x300"
+                alt="">
+        </div>
+
+    </div>
+    <!-- product grid -->
+    <div id="pro1">
+        <div>
+            <img src="https://img.shop.com/Image/280000/282000/282022/products/1954593895.jpg?plain&size=600x600"
+                alt="">
+            <h3>CANDICE - Simulated Diamond Tennis Necklace</h3>
+            <h5>249.95</h5>
+            <h4>evara</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/280000/282000/282022/products/1954593897.jpg?plain&size=600x600"
+                alt="">
+            <h3>SASHA – Double Stud Set</h3>
+            <h5>249.95</h5>
+            <h4>evara</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/280000/282000/282022/products/1954593896.jpg?plain&size=1600x1600"
+                alt="">
+            <h3>EVA – Convertible Link Drop Earrings</h3>
+            <h5>249.95</h5>
+            <h4>evara</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/280000/282000/282022/products/1954593818.jpg?plain&size=1600x1600"
+                alt="">
+            <h3>CANDICE - Simulated Diamond Tennis Bracelet</h3>
+            <h5>249.95</h5>
+            <h4>evara</h4>
+        </div>
+    </div>
+    <div id="pro2">
+        <div>
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600"
+                alt="">
+            <h3>Motives® Gel-ous Brow Gel</h3>
+            <h5>$ 24.95</h5>
+            <h4>sugar</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1841776313.jpg?plain&size=600x600"
+                alt="">
+            <h3>Motives® Lip Kit</h3>
+            <h5>$ 24.95</h5>
+            <h4>sugar</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1942133481.jpg?plain&size=1600x1600"
+                alt="">
+            <h3>Motives® Essential Complexion 4-Piece Brush Set</h3>
+            <h5>$ 24.95</h5>
+            <h4>sugar</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/240000/243300/243380/products/1487570156.jpg?plain&size=1600x1600"
+                alt="">
+            <h3>Motives® Fiber Lush Mascara</h3>
+            <h5>$ 24.95</h5>
+            <h4>sugar</h4>
+        </div>
+    </div>
+    <div id="offer">
+        <img src="https://img.shop.com/Image/homepage/shop-usa-100086-gift-wrapping-media1669930199153.jpg" alt="">
+        <img src="https://img.shop.com/Image/homepage/shop-usa-105054-Holiday-egift-banners-social-media-assets-media1665596337501.jpg"
+            alt="">
+        <img src="https://img.shop.com/Image/homepage/shop-usa-105045-Holiday-Curbside-Pickup-Banners-Social-Media-min1666128402917.jpg"
+            alt="">
+        <img src="https://img.shop.com/Image/homepage/shop_usa_100094_eng_2022_holiday_buy_online_pickup_in_store_banner_-min1667575563985.jpg"
+            alt="">
+    </div>
+    <div id="pro3">
+        <div>
+            <img src="https://img.shop.com/Image/240000/248600/248698/products/1956507686.jpg?plain&size=600x600"
+                alt="">
+            <h3>Lumière de Vie® Lumi-Stick Gift Set</h3>
+            <h5>$ 24.95</h5>
+            <h4>de Vel</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/270000/274000/274036/products/1956507645.jpg?plain&size=600x600"
+                alt="">
+            <h3>Lumière de Vie® Hommes Gift Set</h3>
+            <h5>$ 24.95</h5>
+            <h4>de Vel</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/240000/248600/248698/products/1849034699.jpg?plain&size=600x600"
+                alt="">
+            <h3>Lumière de Vie® Lumi-Stick</h3>
+            <h5>$ 24.95</h5>
+            <h4>de Vel</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/240000/248600/248698/products/1935915380.jpg?plain&size=600x600"
+                alt="">
+            <h3>Lumière de Vie® Soothe & Renew</h3>
+            <h5>$ 24.95</h5>
+            <h4>de Vel</h4>
+        </div>
+    </div>
+    <div id="pro4">
+        <div>
+            <img src="https://img.shop.com/Image/210000/214100/214196/products/561800345.jpg?plain&size=600x600" alt="">
+            <h3>Isotonix® Vitamin D with K2</h3>
+            <h5>$ 24.95</h5>
+            <h4>Isotonic</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/250000/250100/250199/products/1332818472.jpg?plain&size=600x600"
+                alt="">
+            <h3>Miracles Isotonix® Immune</h3>
+            <h5>$ 24.95</h5>
+            <h4>Isotonic</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/210000/214200/214267/products/559010729.jpg?plain&size=600x600" alt="">
+            <h3>ClearShield® Maximum Protection and Hydration</h3>
+            <h5>$ 24.95</h5>
+            <h4>Isotonic</h4>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/210000/214100/214196/products/561800360.jpg?plain&size=600x600" alt="">
+            <h3>Isotonix® Vitamin C</h3>
+            <h5>$ 24.95</h5>
+            <h4>Isotonic</h4>
+        </div>
+    </div>
+    <!-- fotter here -->
+    <div id="fotter">
+        <div id="about">
+            <a href="">About Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Partnur with Us</a>
+            <a href="">Servises</a>
+            <a href="">Contact</a>
+            <a href="">Help</a>
+        </div>
+        <div>
+            <p>
+                © 1997-2022 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and
+                brands are the property of their respective owners.Only Customers will receive cashback on qualifying
+                purchases. UnFranchise Owners/Shop Consultants will receive increased IBV instead of cashback on
+                qualifying purchases.
+            </p>
+        </div>
+        <div id="poli">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms of Use</a>
+            <a href="">Return Policy</a>
+            <a href="">Advertising</a>
+        </div>
+        <div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    //   slider data
+    let slider = [
+        "https://img.freepik.com/free-vector/christmas-sale-banner-with-realistic-decoration-golden-rose_1361-3050.jpg?size=626&ext=jpg",
+        "https://img.freepik.com/free-vector/realistic-christmas-banner-with-white-gold-decoration_1361-2997.jpg?size=626&ext=jpg&ga=GA1.2.273153339.1670951526",
+        "https://img.freepik.com/premium-vector/merry-christmas-gift-promotion-coupon-banner-with-festive-decoration-christmas_255246-2256.jpg?size=626&ext=jpg&ga=GA1.2.273153339.1670951526",
+        "https://t4.ftcdn.net/jpg/02/32/75/49/240_F_232754928_pdDIqYuzz5I4AZiO1UkFYNvwMPYk5hlk.jpg",
+        "https://t3.ftcdn.net/jpg/03/02/38/48/240_F_302384802_woPodQYkoWpzixPP1BDUTVKovuNbprDc.jpg"
+    ]
+    let line = 0
+    setInterval(() => {
+        document.getElementById("slider").setAttribute("src", slider[line++]);
+        if (line > 4) {
+            line = 0
+        }
+    }, 3000)
+
+    // carasal
+
+    document.getElementById("pro1").addEventListener("click", () => {
+        window.location.href = "./jewelry.html"
+    })
+    document.getElementById("pro2").addEventListener("click", () => {
+        window.location.href = "./beauty.html"
+    })
+    document.getElementById("pro3").addEventListener("click", () => {
+        window.location.href = "./makeup.html"
+    })
+    document.getElementById("pro4").addEventListener("click", () => {
+        window.location.href = "./Vitamins.html"
+    })
+    document.getElementById("brands").addEventListener("click", () => {
+        window.location.href = "./Vitamins.html"
+    })
+    document.getElementById("sp1").addEventListener("click", () => {
+        window.location.href = "./makeup.html"
+    })
+    document.getElementById("sp2").addEventListener("click", () => {
+        window.location.href = "./beauty.html"
+    })
+    document.getElementById("sp3").addEventListener("click", () => {
+        window.location.href = "./beauty.html"
+    })
+</script>
