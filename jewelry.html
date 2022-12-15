@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <title>jewelry</title>
+  <style>
+    * {
+      font-family: Rubik;
+    }
+
+    /* nav bar here*/
+    .but {
+      margin-top: 15px;
+      margin-left: 300px;
+      width: 35px;
+    }
+
+    .but1 {
+      margin-top: 15px;
+      width: 35px;
+    }
+
+    .li {
+      margin-top: 25px;
+      margin-left: 30px;
+    }
+
+    #nav {
+      background-color: #78909C;
+      padding: 5px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      height: 150px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      overflow: hidden;
+      position: fixed;
+      top: 0%;
+      width: 98%;
+    }
+
+    input {
+      width: 70%;
+      border: none;
+      height: 40px;
+      margin-left: 10%;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    #logo {
+      width: 100%;
+      height: 100%;
+    }
+
+    #subnav {
+      width: 90%;
+      margin-top: 1%;
+    }
+
+    #subnav>div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5%;
+    }
+
+    #subnav>div:nth-child(2) {
+      display: flex;
+    }
+
+    #subnav>div>input {
+      text-align: center;
+    }
+
+    a {
+      margin-right: 4%;
+      margin-top: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    /* fotter here */
+    #fotter {
+      background-color: #546E7A;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    #fotter img {
+      width: 100%;
+      height: 200px;
+      margin: auto;
+    }
+
+    #about,
+    #poli {
+      display: flex;
+      /* justify-content: space-evenly; */
+    }
+
+    #body3 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      gap: 20px;
+      margin: auto;
+      width: 95%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+
+    #body3>div {
+      /* height: 2%; */
+      text-align: center;
+      border: 3px solid whitesmoke;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    #body3>div>img {
+      width: 90%;
+    }
+
+    /* slider */
+    #slider {
+      width: 95%;
+      height: 300px;
+      margin: auto;
+      padding-top: 165px;
+      padding-bottom: 10px;
+      display: block;
+    }
+
+    #sorter {
+      margin-bottom: -45px;
+      text-align: center;
+    }
+
+    #sorter>select {
+      width: 190px;
+      height: 40px;
+      margin: 0px 50px 0px 50px;
+
+      background-color: whitesmoke;
+      /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+      border-radius: 15px;
+    }
+
+    button {
+      width: 80%;
+      height: 5%;
+      padding-bottom: 30px;
+
+      border: none;
+      border-radius: 20px;
+      background-color: blanchedalmond;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- nav bar here -->
+  <nav id="nav">
+    <div id="logo_div">
+      <img src="./img/Shoppingly-removebg-preview.png" alt="nnot" id="logo">
+    </div>
+    <div id="subnav">
+      <div>
+        <input type="text" placeholder="Search Product Here......" id="input">
+      </div>
+      <div id="links">
+        <a href="./index.html" class="li">Home</a>
+        <a href="./jewelry.html" class="li">Jewelry</a>
+        <a href="./beauty.html" class="li">Beauty</a>
+        <a href="./makeup.html" class="li">MakeUps</a>
+        <a href="./Vitamins.html" class="li">Vitamins</a>
+        <a href="./sign.html"><img src="https://img.shop.com/Image/resources/images/icon-account-circle-24px.svg" alt=""
+            class="but"></a>
+        <a href="./cart.html"><img src="https://img.shop.com/Image/resources/images/icon-shopping-cart-24px.svg" alt=""
+            class="but1"></a>
+      </div>
+    </div>
+  </nav>
+  <!-- body here -->
+  <!-- slider -->
+  <img
+    src="https://img.freepik.com/free-vector/christmas-sale-banner-with-realistic-decoration-golden-rose_1361-3050.jpg?size=626&ext=jpg"
+    alt="" id="slider">
+    <div id="sorter">
+      <select id="priceSort">
+        <option value="">Sort By Price</option>
+        <option value="h2l">High to Low</option>
+        <option value="l2h">Low to High</option>
+      </select>
+      <select id="brandFilter">
+        <option value="">Filter By Brand</option>
+        <option value="Adidas">sugar</option>
+        <option value="Bata">myka</option>
+        <option value="Nike">lakme</option>
+      </select>
+    </div>
+  <div id="body3" style=" background-color: white;"></div>
+  <!-- sort and filter -->
+  
+  <!-- fotter here -->
+  <div id="fotter">
+    <div id="about">
+      <a href="">About Us</a>
+      <a href="">Contact Us</a>
+      <a href="">Partnur with Us</a>
+      <a href="">Servises</a>
+      <a href="">Contact</a>
+      <a href="">Help</a>
+    </div>
+    <div>
+      <p>
+        © 1997-2022 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and
+        brands are the property of their respective owners.Only Customers will receive cashback on qualifying
+        purchases. UnFranchise Owners/Shop Consultants will receive increased IBV instead of cashback on
+        qualifying purchases.
+      </p>
+    </div>
+    <div><img src="./img/h.png" alt=""></div>
+    <div id="poli">
+      <a href="">Privacy Policy</a>
+      <a href="">Terms of Use</a>
+      <a href="">Return Policy</a>
+      <a href="">Advertising</a>
+    </div>
+    <div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  // function
+
+  function make(data) {
+    document.getElementById("body3").innerHTML=null
+    data.forEach((element, index) => {
+      let card = document.createElement("div")
+      card.addEventListener("click", () => {
+        localData = element
+        localStorage.setItem("ditails", JSON.stringify(localData))
+        window.location.href = "./details.html"
+      })
+      let img = document.createElement("img")
+      img.setAttribute("src", element.img)
+      let name = document.createElement("h2")
+      name.innerText = element.name
+      let price = document.createElement("p")
+      price.innerText = element.price
+      let dis = document.createElement("p")
+      dis.innerText = element.brand
+      let add = document.createElement("button")
+      add.innerText = "Add to Cart"
+      //this where we add functian to add button
+      add.addEventListener("click", () => {
+        let localData = JSON.parse(localStorage.getItem("cart")) || []
+        let isIncart = false
+        for (let i = 0; i < localData.length; i++) {
+          if (localData[i].id === element.id) {
+            isIncart = true;
+            break;
+          }
+        }
+        if (isIncart) {
+          alert("Product Already in Cart");
+        } else {
+          localData.push({ ...element, quantity: 1 })
+          localStorage.setItem("cart", JSON.stringify(localData))
+          alert("Product Added To Cart");
+        }
+      })
+      card.append(img, name, price, dis, add)
+      document.getElementById("body3").append(card)
+    });
+  }
+
+  let jewel = [
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593819.jpg?plain&size=600x600",
+      name: "GABRIELLA - Simulated Diamond Tennis",
+      type: "Necklace",
+      price: 299.95,
+      qty: 1, brand: "evara"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593895.jpg?plain&size=600x600",
+      name: "CANDICE - Simulated Diamond Tennis Necklace",
+      type: "Necklace",
+      price: 249.95,
+      qty: 1, brand: "evara"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593896.jpg?plain&size=1600x1600",
+      name: "EVA – Convertible Link Drop Earrings",
+      type: "Earring",
+      price: 49.95,
+      qty: 1, brand: "evara"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593897.jpg?plain&size=600x600",
+      name: "SASHA – Double Stud Set",
+      type: "Earring",
+      price: 49.95,
+      qty: 1, brand: "evara"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593919.jpg?plain&size=1600x1600",
+      name: "LORENA – Dual Stud Chain Earrings",
+      type: "Earring",
+      price: 99.95,
+      qty: 1, brand: "malabar"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593818.jpg?plain&size=1600x1600",
+      name: "CANDICE - Simulated Diamond Tennis Bracelet",
+      type: "Bracelet",
+      price: 29.95,
+      qty: 1, brand: "malabar"
+    }, {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593899.jpg?plain&size=1600x1600",
+      name: "GABRIELLA - Simulated Diamond Tennis Bracelet",
+      type: "Bracelet",
+      price: 79.95,
+      qty: 1, brand: "malabar"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593898.jpg?plain&size=1600x1600",
+      name: "WINNIE - Sleek Ring Trio",
+      type: "Bracelet",
+      price: 59.95,
+      qty: 1, brand: "malabar"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1954593918.jpg?plain&size=1600x1600",
+      name: "GENEVIEVE - Dual Stone Ring",
+      type: "Earring",
+      price: 99.95,
+      qty: 1, brand: "malabar"
+    },
+    {
+      img: "https://img.shop.com/Image/280000/282000/282022/products/1955444694.jpg?plain&size=1600x1600",
+      name: "JORDAN - Triple Stone Ring",
+      type: "Earring",
+      price: 89.95,
+      qty: 1, brand: "malabar"
+    },
+  ]
+  make(jewel);
+
+  //   slider data
+  let slider = [
+    "https://img.freepik.com/free-vector/christmas-sale-banner-with-realistic-decoration-golden-rose_1361-3050.jpg?size=626&ext=jpg",
+    "https://img.freepik.com/free-vector/realistic-christmas-banner-with-white-gold-decoration_1361-2997.jpg?size=626&ext=jpg&ga=GA1.2.273153339.1670951526",
+    "https://img.freepik.com/premium-vector/merry-christmas-gift-promotion-coupon-banner-with-festive-decoration-christmas_255246-2256.jpg?size=626&ext=jpg&ga=GA1.2.273153339.1670951526",
+    "https://t4.ftcdn.net/jpg/02/32/75/49/240_F_232754928_pdDIqYuzz5I4AZiO1UkFYNvwMPYk5hlk.jpg",
+    "https://t3.ftcdn.net/jpg/03/02/38/48/240_F_302384802_woPodQYkoWpzixPP1BDUTVKovuNbprDc.jpg"
+  ]
+  let line = 0
+  setInterval(() => {
+    document.getElementById("slider").setAttribute("src", slider[line++]);
+    if (line > 4) {
+      line = 0
+    }
+  }, 3000)
+  // sorting here
+document.getElementById("priceSort").addEventListener("change", (e) => {
+    let sortBy = e.target.value;
+    if (sortBy === "h2l") {
+      // sort in desc
+      let newData = jewel.sort((a, b) => +b.price - +a.price);
+      make(newData);
+    } else if (sortBy === "l2h") {
+      let newData = jewel.sort((a, b) => +a.price - +b.price);
+      make(newData);
+    }
+  });
+
+  // filter here
+  document.getElementById("brandFilter").addEventListener("change", (e) => {
+    let brand = e.target.value;
+    let newData = jewel.filter((el, index) => {
+      return el.brand == brand;
+    });
+    make(newData);
+  });
+
+  // brand search
+  document.getElementById("input").addEventListener("input", (e) => {
+    console.log(e.target.value);
+    let newData = jewel.filter((el, index) => {
+      return el.brand.toLowerCase().includes(e.target.value);
+    });
+    make(newData);
+  });
+</script>
