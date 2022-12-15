@@ -6,10 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+   
     <title>shoppingly.com</title>
     <style>
         * {
             text-align: center;
+            font-family: Rubik;
             /* background-color: #FAFAFA; */
         }
 
@@ -18,40 +23,57 @@
         }
 
         /* nav bar here*/
+        .but {
+            margin-top: 15px;
+            margin-left: 300px;
+            width: 35px;
+        }
+
+        .but1 {
+            margin-top: 15px;
+            width: 35px;
+        }
+
+        .li {
+            margin-top: 25px;
+            margin-left: 30px;
+        }
+
         #nav {
             background-color: #78909C;
             padding: 5px;
             border-radius: 5px;
             display: flex;
             justify-content: space-between;
-            height: 100px;
+            height: 150px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            overflow: hidden;
-            position: fixed;
-            top: 0%;
-            width: 98%;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            width: 99%;
         }
 
         input {
             width: 70%;
-            border-radius: 0px 20px 20px 0px;
+
             border: none;
         }
 
         select {
             width: 25%;
-
             border-radius: 20px 0px 0px 20px
         }
 
         #search {
             height: 40px;
             width: 40px;
-            margin-right: 50px;
+            margin-right: 30px;
+            border-radius: 0px 20px 20px 0px;
+            background-color: black;
         }
 
         #logo {
-            width: 150%;
+            width: 100%;
             height: 100%;
         }
 
@@ -83,15 +105,25 @@
 
         /* fotter here */
         #fotter {
-            background-color: #546E7A;
+            background-color: #78909C;
             padding: 10px;
             border-radius: 10px;
+        }
+
+        #fotter img {
+            width: 100%;
+            height: 1%;
+            margin: auto;
         }
 
         #about,
         #poli {
             display: flex;
             /* justify-content: space-evenly; */
+        }
+
+        #body {
+            background-color: #ECEFF1;
         }
 
         #body div:nth-child(3) {
@@ -103,6 +135,7 @@
         #body div:nth-child(3)>div>img {
             height: 90%;
             width: 80%;
+            border-radius: 20px;
         }
 
         #body div:nth-child(7) {
@@ -122,6 +155,10 @@
             display: flex;
             justify-content: space-evenly;
             margin: 30px;
+            padding-top: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: white;
         }
 
         #body2 {
@@ -137,10 +174,10 @@
         #body2 div:nth-child(1) {
             display: flex;
             justify-content: space-evenly;
-            margin: 30px;
+            margin: 50px;
             background-color: white;
             margin-top: 50px;
-            padding: 50px;
+            padding: 20px;
             /* margin: 30px;
             border: 25px solid #CFD8DC; */
         }
@@ -165,6 +202,8 @@
             width: 150px;
             height: 150px;
             border-radius: 150px;
+            margin-bottom: 30px;
+            border: 10px solid #ECEFF1;
         }
 
         #offer {
@@ -177,6 +216,19 @@
         }
 
         #offer>img {
+            margin: 9px;
+        }
+
+        .offer1 {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+            background-color: white;
+            margin: 50px;
+            padding: 50px;
+        }
+
+        .offer1>div>img {
             margin: 9px;
         }
 
@@ -235,10 +287,26 @@
             border-radius: 0px 0px 10px 10px;
             background-color: white;
         }
+
+        /* holiday */
+        .holiday {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 30px;
+        }
+
+        .holiday>img {
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+            margin-bottom: 30px;
+            border: 10px solid #ECEFF1;
+        }
     </style>
 </head>
 
 <body>
+    <h3 style="background-color: black; color: white; margin: 0%; border-radius: 10px;padding: 1%;">1st time customers save 25% on SHOP.COM exclusive brands using code FIRST25OFF. Max $25 discount. Terms Apply.</h3>
     <!-- nav bar here -->
     <nav id="nav">
         <div id="logo_div">
@@ -254,40 +322,59 @@
                     <option value="Vitamin">Vitamin</option>
                 </select>
                 <input type="text" placeholder="Search Product Here......">
-                <img src="https://img.icons8.com/ios/2x/search.png" alt="" id="search">
+                <img src="https://icon-library.com/images/white-search-icon-png/white-search-icon-png-19.jpg" alt=""
+                    id="search">
             </div>
             <div id="links">
-                <a href="./index.html">Home</a>
-                <a href="./jewelry.html">Jewelry</a>
-                <a href="./beauty.html">Beauty</a>
-                <a href="./makeup.html">MakeUps</a>
-                <a href="./Vitamins.html">Vitamins</a>
-                <a href="./sign.html">Sign Up</a>
-                <a href="./cart.html">Cart</a>
+                <a href="./index.html" class="li">Home</a>
+                <a href="./jewelry.html" class="li">Jewelry</a>
+                <a href="./beauty.html" class="li">Beauty</a>
+                <a href="./makeup.html" class="li">MakeUps</a>
+                <a href="./Vitamins.html" class="li">Vitamins</a>
+                <a href="./sign.html"><img
+                        src="https://img.shop.com/Image/resources/images/icon-account-circle-24px.svg" alt=""
+                        class="but"></a>
+                <a href="./cart.html"><img src="https://img.shop.com/Image/resources/images/icon-shopping-cart-24px.svg"
+                        alt="" class="but1"></a>
             </div>
         </div>
     </nav>
     <!-- body first part -->
     <div id="body">
         <div>
-            <h3 style="margin-top: 150px;">$ 10045 cashback Dispersed throw ourweb</h3>
+            <h3 style="margin-top:10px; padding-top: 10px;">$50,009,502 awarded in Cashback! $50,009,502 awarded in
+                Cashback!</h3>
         </div>
         <div>
             <img src="https://img.shop.com/Image/homepage/shop-gbr-102789-holiday-hot-toys-banners-1600x300-img-min1669996056936.jpg"
                 alt="" style="width: 100%;">
         </div>
         <div>
-            <div><img src="https://img.shop.com/Image/departments/Beauty.jpg" alt=""></div>
-            <div><img src="https://img.shop.com/Image/homepage/stocking-stuffers-media-300x250-img1669837197571.jpg"
-                    alt=""></div>
-            <div>
+            <div><img src="https://img.shop.com/Image/departments/Beauty.jpg" alt="">
+                <p>Beauty Products</p>
+            </div>
+            <div><img src="https://img.shop.com/Image/240000/243300/243380/products/536366061.jpg?plain&size=600x600"
+                    alt="">
+                <p>Wellness</p>
+            </div>
+            <div style="display: block; height: 300px; margin-top: -15px;">
+                <h4>If you are new User</h4>
                 <h2>Sign Up Here</h2>
-                <button>Sign Up</button>
+                <button
+                    style="margin-bottom:30px; width: 400px; height: 50px; border: none; border-radius: 20px; background-color: white;"
+                    id="btn">Sign Up</button>
+                <h4>If you are Exesting User</h4>
+                <h2>Login Up Here</h2>
+                <button
+                    style="margin-bottom:30px; width: 400px; height: 50px; border: none; border-radius: 20px; background-color: white;"
+                    id="btn1">Login Up</button>
+                <!-- <img src="https://img.shop.com/Image/homepage/us-eng-oerstock-hp-media-dec221670968240105.png"
+                alt="" id="sp3"> -->
             </div>
         </div>
         <div>
-            <img src="https://img.shop.com/Image/homepage/shop-us-105060-holiday-egift-cards-banners-600x600-img-min1670878325117.jpg"
-                alt="" id="sp3">
+            <!-- <img src="https://img.shop.com/Image/homepage/shop-us-105060-holiday-egift-cards-banners-600x600-img-min1670878325117.jpg"
+                alt="" id="sp3"> -->
         </div>
         <!-- slider -->
         <img src="https://img.freepik.com/free-vector/christmas-sale-banner-with-realistic-decoration-golden-rose_1361-3050.jpg?size=626&ext=jpg"
@@ -368,6 +455,25 @@
             <h4>evara</h4>
         </div>
     </div>
+    <div class="offer1">
+        <div>
+            <img src="https://img.shop.com/Image/homepage/us-eng-shopbop-ny-medi-fillin-hp-jan211671032078319.jpg"
+                alt="">
+            <h3>3.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/us-mk-media-dec221670445967935.jpg" alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/us-eng-3rdlove-media-hp-dec221669846216726.jpg" alt="">
+            <h3>5.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/athelta-media-hp5556-14898061669846349406.jpg" alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+    </div>
     <div id="pro2">
         <div>
             <img src="https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600"
@@ -437,6 +543,25 @@
             <h4>de Vel</h4>
         </div>
     </div>
+    <div class="offer1">
+        <div>
+            <img src="https://img.shop.com/Image/homepage/us-shp-isotonix-opc-beauty-blend1666710651225.jpg" alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/ix-us-eng-105233-digestive-health-packets-holiday-banner-med1667506965936.jpg"
+                alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/royal-spa-usa-engsmall1666034758440.jpg" alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+        <div>
+            <img src="https://img.shop.com/Image/homepage/gifttree1670343352918.jpg" alt="">
+            <h3>2.00% Cashback</h3>
+        </div>
+    </div>
     <div id="pro4">
         <div>
             <img src="https://img.shop.com/Image/210000/214100/214196/products/561800345.jpg?plain&size=600x600" alt="">
@@ -464,6 +589,16 @@
             <h4>Isotonic</h4>
         </div>
     </div>
+    <h3>Holiday Specials</h3>
+    <div class="holiday">
+        <img src="https://img.shop.com/Image/240000/248600/248698/products/925887691.jpg?plain&size=750x750" alt="">
+        <img src="https://img.shop.com/Image/280000/282000/282022/products/1875095140.jpg?plain&size=750x750" alt="">
+        <img src="https://img.shop.com/Image/210000/214100/214196/products/701199621.jpg?plain&size=750x750" alt="">
+        <img src="https://img.shop.com/Image/240000/243300/243390/products/1954251885.jpg?plain&size=1600x1600" alt="">
+        <img src="https://img.shop.com/Image/240000/243300/243380/products/1788447992.jpg?plain&size=750x750" alt="">
+        <img src="https://img.shop.com/Image/240000/248600/248698/products/1849034699.jpg?plain&size=750x750" alt="">
+    </div>
+    
     <!-- fotter here -->
     <div id="fotter">
         <div id="about">
@@ -482,6 +617,7 @@
                 qualifying purchases.
             </p>
         </div>
+        <div><img src="./img/h.png" alt=""></div>
         <div id="poli">
             <a href="">Privacy Policy</a>
             <a href="">Terms of Use</a>
@@ -494,6 +630,7 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script>
 
     //   slider data
@@ -535,7 +672,13 @@
     document.getElementById("sp2").addEventListener("click", () => {
         window.location.href = "./beauty.html"
     })
-    document.getElementById("sp3").addEventListener("click", () => {
-        window.location.href = "./beauty.html"
+    // document.getElementById("sp3").addEventListener("click", () => {
+    //     window.location.href = "./beauty.html"
+    // })
+    document.getElementById("btn").addEventListener("click", () => {
+        window.location.href = "./sign.html"
+    })
+    document.getElementById("btn1").addEventListener("click", () => {
+        window.location.href = "./sign.html"
     })
 </script>
