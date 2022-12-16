@@ -10,145 +10,39 @@
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <title>Sign Up</title>
     <style>
-    * {
-      font-family: Rubik;
-    }
-    body{
-        background-color: aliceblue;
-    }
-    /* nav bar here*/
-    .but {
-      margin-top: 15px;
-      margin-left: 300px;
-      width: 35px;
-    }
-
-    .but1 {
-      margin-top: 15px;
-      width: 35px;
-    }
-
-    .li {
-      margin-top: 25px;
-      margin-left: 30px;
-    }
-
-    #nav {
-      background-color: #78909C;
-      padding: 5px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      height: 150px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      overflow: hidden;
-      position: fixed;
-      top: 0%;
-      width: 98%;
-    }
-
-    #input {
-      width: 70%;
-      border: none;
-      height: 40px;
-      margin-left: 10%;
-      border-radius: 20px 20px 20px 20px;
-    }
-
-    #logo {
-      width: 100%;
-      height: 100%;
-    }
-
-    #subnav {
-      width: 90%;
-      margin-top: 1%;
-    }
-
-    #subnav>div:nth-child(1) {
-      display: flex;
-      justify-content: space-between;
-      margin: 0.5%;
-    }
-
-    #subnav>div:nth-child(2) {
-      display: flex;
-    }
-
-    #subnav>div>input {
-      text-align: center;
-    }
-
-    a {
-      margin-right: 4%;
-      margin-top: 10px;
-      text-decoration: none;
-      color: white;
-    }
-
-    /* fotter here */
-    #fotter {
-      background-color: #546E7A;
-      padding: 10px;
-      border-radius: 10px;
-    }
-
-    #fotter img {
-      width: 100%;
-      height: 200px;
-      margin: auto;
-    }
-
-    #about,
-    #poli {
-      display: flex;
-      /* justify-content: space-evenly; */
-    }
-    /* main */
     #main{
         padding-top: 20px;
         padding-bottom: 50px;
-        width: 50%;
+        width: 400px;
         height: 20%;
         margin: auto;
         background-color: blanchedalmond;
     }
-    #singup{
-        width: 50%;
-        height: 100%;
-        margin: auto;
-    }
-    #singup>h4>input{
-        width: 60%;
-        height: 30px;
-        margin: 5px;
-        border: none;
+    
+    #singup>input,#singup>button{
+      width: 380px;
+        height: 50px;
+        margin: 10px;
     }
     #login{
         width: 50%;
         height: 100%;
-        margin: auto;
         display: none;
     }
-    #login{
-        width: 50%;
-        height: 100%;
-        margin: auto;
-    }
     #login>input,#login>button{
-        width: 100%;
-        height: 30px;
-        margin: 5px;
+        width: 380px;
+        height: 50px;
+        margin: 10px;
     }
-    #log,#login>button{
-        width: 40%;
+    #log{
+        width: 400px;
         height: 50px;
         border: none;
         background-color: whitesmoke;
         border-radius: 10px;
     }
-    #sig,#singup>button{
-        width: 40%;
+    #sig{
+        width: 400px;
         height: 50px;
         border: none;
         background-color: whitesmoke;
@@ -158,31 +52,14 @@
         text-align: center;
         padding-top:50px;
     }
+    #leble{
+      display: flex;
+      
+    }
     </style>
 </head>
 <body>
-    <!-- nav bar here -->
-  <nav id="nav">
-    <div id="logo_div">
-      <img src="./img/Shoppingly-removebg-preview.png" alt="nnot" id="logo">
-    </div>
-    <div id="subnav">
-      <div>
-        <input type="text" placeholder="Search Product Here......" id="input">
-      </div>
-      <div id="links">
-        <a href="./index.html" class="li">Home</a>
-        <a href="./jewelry.html" class="li">Jewelry</a>
-        <a href="./beauty.html" class="li">Beauty</a>
-        <a href="./makeup.html" class="li">MakeUps</a>
-        <a href="./Vitamins.html" class="li">Vitamins</a>
-        <a href="./sign.html"><img src="https://img.shop.com/Image/resources/images/icon-account-circle-24px.svg" alt=""
-            class="but"></a>
-        <a href="./cart.html"><img src="https://img.shop.com/Image/resources/images/icon-shopping-cart-24px.svg" alt=""
-            class="but1"></a>
-      </div>
-    </div>
-  </nav>
+    <a href="./index.html">h</a>
   <div class="r">
     <h1>sign up page</h1>
   </div>
@@ -192,47 +69,19 @@
         <button id="log">Log In</button>
     </div>
     <div id="singup">
-        <h4>Nmae : <input type="text" placeholder="Your Name"></h4>
-        <h4>Email: <input type="email" placeholder="Email"></h4>
-        <h4>Number: <input type="number" placeholder="Number"></h4>
-        <h4>Password: <input type="password" placeholder="Enter New password"></h4>
-        <h4>Password: <input type="password" placeholder="Confirm password"></h4>
-        <button>Sign Up</button>
+        <input type="text" placeholder="Your Name" id="name">
+        <input type="email" placeholder="Email" id="email">
+        <input type="number" placeholder="Number" id="num">
+        <input type="password" placeholder="Enter New password" id="pass">
+        <button id="signup">Sign Up</button>
     </div>
     <div id="login">
-        <span>Email: </span><input type="text" placeholder="Email">
-        <span>Password: </span><input type="password" placeholder="password">
-        <button>Log In</button>
+        <input type="text" placeholder="Email" id="eemail">
+        <input type="password" placeholder="password" id="epass">
+        <button id="loging">Log In</button>
     </div>
     </div>
-    <!-- fotter here -->
-  <div id="fotter">
-    <div id="about">
-      <a href="">About Us</a>
-      <a href="">Contact Us</a>
-      <a href="">Partnur with Us</a>
-      <a href="">Servises</a>
-      <a href="">Contact</a>
-      <a href="">Help</a>
-    </div>
-    <div>
-      <p>
-        © 1997-2022 Market America, Inc. or its affiliates. All other designated trademarks, copyrights, and
-        brands are the property of their respective owners.Only Customers will receive cashback on qualifying
-        purchases. UnFranchise Owners/Shop Consultants will receive increased IBV instead of cashback on
-        qualifying purchases.
-      </p>
-    </div>
-    <div><img src="./img/h.png" alt=""></div>
-    <div id="poli">
-      <a href="">Privacy Policy</a>
-      <a href="">Terms of Use</a>
-      <a href="">Return Policy</a>
-      <a href="">Advertising</a>
-    </div>
-    <div>
-    </div>
-  </div>
+   
 </body>
 </html>
 <script>
@@ -245,5 +94,51 @@
         document.getElementById("singup").style.display="block";
         document.getElementById("login").style.display="none";
         
+    })
+
+    document.getElementById("signup").addEventListener("click",()=>{
+      let user=JSON.parse(localStorage.getItem("user"))||[]
+      let isnew=true
+      let ename=document.getElementById("name").value
+      for(let i=0;i<user.length;i++){
+        if(user[i].name==ename){
+          isnew=false
+        }
+      }
+      if(isnew){
+        user.push({
+          name:ename,
+          email:document.getElementById("email").value,
+          number:document.getElementById("num").value,
+          pass:document.getElementById("pass").value
+        })
+        localStorage.setItem("user",JSON.stringify(user))
+        alert("sign up done you can log in now")
+      }else{
+        alert("alredy signuped")
+      }
+    })
+
+    // login 
+    document.getElementById("loging").addEventListener("click",()=>{
+      let user=JSON.parse(localStorage.getItem("user"))||[]
+      let eemail=document.getElementById("eemail").value
+      let epass=document.getElementById("epass").value
+      let isvalid=false
+      let id=0
+      for(let i=0;i<user.length;i++){
+        if(user[i].email==eemail){
+          if(user[i].pass==epass){
+            isvalid=true
+            id=i
+          }
+        }
+      }
+      if(isvalid){
+        alert("login succesfull")
+        localStorage.setItem("userlog",JSON.stringify(user[id]))
+      }else{
+        alert("wrong credentials")
+      }
     })
 </script>

@@ -85,7 +85,29 @@
           text-decoration: none;
           color: white;
         }
-    
+        /* body */
+        #body3{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: auto;
+            gap: 20px;
+            margin: auto;
+            width: 95%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #body3>div{
+            /* height: 2%; */
+            text-align: center;
+            border: 3px solid whitesmoke;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        #body3>div>img{
+            width: 90%;
+        }
         /* fotter here */
         #fotter {
           background-color: #546E7A;
@@ -129,6 +151,8 @@
       </div>
     </div>
   </nav>
+  <!-- body -->
+  <div id="body3" style="margin-top: 120px;"></div>
    <!-- fotter here -->
    <div id="fotter">
     <div id="about">
@@ -159,3 +183,24 @@
   </div>
 </body>
 </html>
+<script>
+  let localData = JSON.parse(localStorage.getItem("shcart"))
+  make(localData)
+  function make(data) {
+    document.getElementById("body3").innerHTML=null
+    data.forEach((element, index) => {
+      let card = document.createElement("div")
+      let img = document.createElement("img")
+      img.setAttribute("src", element.img)
+      let name = document.createElement("h2")
+      name.innerText = element.name
+      let price = document.createElement("p")
+      price.innerText = element.price
+      let dis = document.createElement("p")
+      dis.innerText = element.brand
+      
+      card.append(img, name, price, dis)
+      document.getElementById("body3").append(card)
+    });
+  }
+</script>

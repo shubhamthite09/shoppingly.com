@@ -252,7 +252,7 @@
         add.innerText = "Add to Cart"
         //this where we add functian to add button
         add.addEventListener("click", () => {
-          let localData = JSON.parse(localStorage.getItem("cart")) || []
+          let localData = JSON.parse(localStorage.getItem("shcart")) || []
           let isIncart = false
           for (let i = 0; i < localData.length; i++) {
             if (localData[i].id === element.id) {
@@ -263,8 +263,8 @@
           if (isIncart) {
             alert("Product Already in Cart");
           } else {
-            localData.push({ ...element, quantity: 1 })
-            localStorage.setItem("cart", JSON.stringify(localData))
+            localData.push(element)
+            localStorage.setItem("shcart", JSON.stringify(localData))
             alert("Product Added To Cart");
           }
         })
@@ -273,26 +273,26 @@
       });
     }
     let Beauty=[
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133519.jpg?plain&size=1600x1600",name:"Motives® X Amber Essential Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600",name:"Motives® Gel-ous Brow Gel",type:"cosmatic",price:"20.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1841776313.jpg?plain&size=600x600",name:"Motives® Lip Kit",type:"cosmatic",price:"27.5",qty:1,brand:"lakme"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133481.jpg?plain&size=1600x1600",name:"Motives® Essential Complexion 4-Piece Brush Set",type:"cosmatic",price:"20.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1487570156.jpg?plain&size=1600x1600",name:"Motives® Fiber Lush Mascara",type:"cosmatic",price:"22.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133520.jpg?plain&size=600x600",name:"Motives® Essential Eye 7-Piece Brush Set",type:"cosmatic",price:"200.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133484.jpg?plain&size=600x600",name:"Motives® 30th Anniversary Lip Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1905765309.jpg?plain&size=600x600",name:"Motives® LALA Liquid Lipstick",type:"cosmatic",price:"200.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/536366061.jpg?plain&size=600x600",name:"Motives® 10 Years Younger Makeup Setting Spray",type:"cosmatic",price:"200.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133569.jpg?plain&size=600x600",name:"Motives® Eye Prime",type:"cosmatic",price:"200.5",qty:1,brand:"lakme"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133519.jpg?plain&size=1600x1600",name:"Motives® X Amber Essential Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600",name:"Motives® Gel-ous Brow Gel",type:"cosmatic",price:"20.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1841776313.jpg?plain&size=600x600",name:"Motives® Lip Kit",type:"cosmatic",price:"27.5",qty:1,brand:"lakme"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133481.jpg?plain&size=1600x1600",name:"Motives® Essential Complexion 4-Piece Brush Set",type:"cosmatic",price:"20.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1487570156.jpg?plain&size=1600x1600",name:"Motives® Fiber Lush Mascara",type:"cosmatic",price:"22.5",qty:1,brand:"lakme"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133520.jpg?plain&size=600x600",name:"Motives® Essential Eye 7-Piece Brush Set",type:"cosmatic",price:"200.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133484.jpg?plain&size=600x600",name:"Motives® 30th Anniversary Lip Collection",type:"cosmatic",price:"200.5",qty:1,brand:"lakme"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1905765309.jpg?plain&size=600x600",name:"Motives® LALA Liquid Lipstick",type:"cosmatic",price:"200.5",qty:1,brand:"myka"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/536366061.jpg?plain&size=600x600",name:"Motives® 10 Years Younger Makeup Setting Spray",type:"cosmatic",price:"200.5",qty:1,brand:"sugar"},
-{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133569.jpg?plain&size=600x600",name:"Motives® Eye Prime",type:"cosmatic",price:"200.5",qty:1,brand:"lakme"}
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133519.jpg?plain&size=1600x1600",name:"Motives® X Amber Essential Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar",id:29},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600",name:"Motives® Gel-ous Brow Gel",type:"cosmatic",price:"20.5",qty:1,brand:"sugar",id:30},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1841776313.jpg?plain&size=600x600",name:"Motives® Lip Kit",type:"cosmatic",price:"27.5",qty:1,brand:"lakme",id:31},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133481.jpg?plain&size=1600x1600",name:"Motives® Essential Complexion 4-Piece Brush Set",type:"cosmatic",price:"20.5",qty:1,brand:"myka",id:32},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1487570156.jpg?plain&size=1600x1600",name:"Motives® Fiber Lush Mascara",type:"cosmatic",price:"22.5",qty:1,brand:"sugar",id:33},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133520.jpg?plain&size=600x600",name:"Motives® Essential Eye 7-Piece Brush Set",type:"cosmatic",price:"200.5",qty:1,brand:"myka",id:34},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133484.jpg?plain&size=600x600",name:"Motives® 30th Anniversary Lip Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar",id:35},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1905765309.jpg?plain&size=600x600",name:"Motives® LALA Liquid Lipstick",type:"cosmatic",price:"200.5",qty:1,brand:"myka",id:36},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/536366061.jpg?plain&size=600x600",name:"Motives® 10 Years Younger Makeup Setting Spray",type:"cosmatic",price:"200.5",qty:1,brand:"myka",id:37},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133569.jpg?plain&size=600x600",name:"Motives® Eye Prime",type:"cosmatic",price:"200.5",qty:1,brand:"lakme",id:38},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133519.jpg?plain&size=1600x1600",name:"Motives® X Amber Essential Collection",type:"cosmatic",price:"200.5",qty:1,brand:"sugar",id:39},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1939204281.jpg?plain&size=1600x1600",name:"Motives® Gel-ous Brow Gel",type:"cosmatic",price:"20.5",qty:1,brand:"sugar",id:40},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1841776313.jpg?plain&size=600x600",name:"Motives® Lip Kit",type:"cosmatic",price:"27.5",qty:1,brand:"lakme",id:41},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133481.jpg?plain&size=1600x1600",name:"Motives® Essential Complexion 4-Piece Brush Set",type:"cosmatic",price:"20.5",qty:1,brand:"myka",id:42},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1487570156.jpg?plain&size=1600x1600",name:"Motives® Fiber Lush Mascara",type:"cosmatic",price:"22.5",qty:1,brand:"lakme",id:43},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133520.jpg?plain&size=600x600",name:"Motives® Essential Eye 7-Piece Brush Set",type:"cosmatic",price:"200.5",qty:1,brand:"sugar",id:44},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133484.jpg?plain&size=600x600",name:"Motives® 30th Anniversary Lip Collection",type:"cosmatic",price:"200.5",qty:1,brand:"lakme",id:45},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1905765309.jpg?plain&size=600x600",name:"Motives® LALA Liquid Lipstick",type:"cosmatic",price:"200.5",qty:1,brand:"myka",id:46},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/536366061.jpg?plain&size=600x600",name:"Motives® 10 Years Younger Makeup Setting Spray",type:"cosmatic",price:"200.5",qty:1,brand:"sugar",id:47},
+{img:"https://img.shop.com/Image/240000/243300/243380/products/1942133569.jpg?plain&size=600x600",name:"Motives® Eye Prime",type:"cosmatic",price:"200.5",qty:1,brand:"lakme",id:48}
 ]
 make(Beauty)
 

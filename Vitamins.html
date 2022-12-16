@@ -253,7 +253,7 @@
         add.innerText = "Add to Cart"
         //this where we add functian to add button
         add.addEventListener("click", () => {
-          let localData = JSON.parse(localStorage.getItem("cart")) || []
+          let localData = JSON.parse(localStorage.getItem("shcart")) || []
           let isIncart = false
           for (let i = 0; i < localData.length; i++) {
             if (localData[i].id === element.id) {
@@ -264,8 +264,8 @@
           if (isIncart) {
             alert("Product Already in Cart");
           } else {
-            localData.push({ ...element, quantity: 1 })
-            localStorage.setItem("cart", JSON.stringify(localData))
+            localData.push(element)
+            localStorage.setItem("shcart", JSON.stringify(localData))
             alert("Product Added To Cart");
           }
         })
@@ -275,22 +275,22 @@
     }
 
     let vdata=[
-{img:"https://img.shop.com/Image/210000/214100/214196/products/561800345.jpg?plain&size=600x600",name:"Isotonix® Vitamin D with K2",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/250000/250100/250199/products/1332818472.jpg?plain&size=600x600",name:"DNA Miracles Isotonix® Immune",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214200/214267/products/559010729.jpg?plain&size=600x600",name:"ClearShield® Maximum Protection and Hydration",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/561800360.jpg?plain&size=600x600",name:"Isotonix® Vitamin C",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/912160941.jpg?plain&size=600x600",name:"Isotonix® Bromelain Plus",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/240000/243300/243390/products/1954251779.jpg?plain&size=600x600",name:"Snap™ Shopping Annuity Heavy Duty Concentrate",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/240000/243300/243390/products/1954251785.jpg?plain&size=600x600",name:"Snap™ Shopping Annuity Triple Enzyme 3X Laundry Detergent",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/893741343.jpg?plain&size=600x600",name:"Isotonix® Immune",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/240000/243300/243396/products/603891601.jpg?plain&size=600x600",name:"Ultimate Aloe™",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/1301699648.jpg?plain&size=600x600",name:"Isotonix® Digestive Enzymes with Probiotics",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/270000/279400/279479/products/1790609519.jpg?plain&size=600x600",name:"Thymenol™",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/240000/243300/243386/products/623809148.jpg?plain&size=600x600",name:"Prime™ Astaxanthin Cardio and Visual Vitality Formula",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/1570985385.jpg?plain&size=600x600",name:"Isotonix Essentials® Anti-Aging",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/1741625450.jpg?plain&size=600x600",name:"Isotonix® Complete Greens",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/240000/243300/243392/products/867821034.jpg?plain&size=600x600",name:"Timeless Prescription Oxygen Extreme",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"},
-{img:"https://img.shop.com/Image/210000/214100/214196/products/604981551.jpg?plain&size=600x600",name:"Isotonix® Multimineral",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic"}
+{img:"https://img.shop.com/Image/210000/214100/214196/products/561800345.jpg?plain&size=600x600",name:"Isotonix® Vitamin D with K2",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:1},
+{img:"https://img.shop.com/Image/250000/250100/250199/products/1332818472.jpg?plain&size=600x600",name:"DNA Miracles Isotonix® Immune",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:2},
+{img:"https://img.shop.com/Image/210000/214200/214267/products/559010729.jpg?plain&size=600x600",name:"ClearShield® Maximum Protection and Hydration",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:3},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/561800360.jpg?plain&size=600x600",name:"Isotonix® Vitamin C",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:4},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/912160941.jpg?plain&size=600x600",name:"Isotonix® Bromelain Plus",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:5},
+{img:"https://img.shop.com/Image/240000/243300/243390/products/1954251779.jpg?plain&size=600x600",name:"Snap™ Shopping Annuity Heavy Duty Concentrate",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:6},
+{img:"https://img.shop.com/Image/240000/243300/243390/products/1954251785.jpg?plain&size=600x600",name:"Snap™ Shopping Annuity Triple Enzyme 3X Laundry Detergent",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:7},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/893741343.jpg?plain&size=600x600",name:"Isotonix® Immune",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:8},
+{img:"https://img.shop.com/Image/240000/243300/243396/products/603891601.jpg?plain&size=600x600",name:"Ultimate Aloe™",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:9},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/1301699648.jpg?plain&size=600x600",name:"Isotonix® Digestive Enzymes with Probiotics",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:10},
+{img:"https://img.shop.com/Image/270000/279400/279479/products/1790609519.jpg?plain&size=600x600",name:"Thymenol™",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:11},
+{img:"https://img.shop.com/Image/240000/243300/243386/products/623809148.jpg?plain&size=600x600",name:"Prime™ Astaxanthin Cardio and Visual Vitality Formula",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:12},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/1570985385.jpg?plain&size=600x600",name:"Isotonix Essentials® Anti-Aging",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:13},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/1741625450.jpg?plain&size=600x600",name:"Isotonix® Complete Greens",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:14},
+{img:"https://img.shop.com/Image/240000/243300/243392/products/867821034.jpg?plain&size=600x600",name:"Timeless Prescription Oxygen Extreme",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:15},
+{img:"https://img.shop.com/Image/210000/214100/214196/products/604981551.jpg?plain&size=600x600",name:"Isotonix® Multimineral",type:"vitamin",price:"45.5",qty:1,brand:"Isotonic",id:16}
 ]
 make(vdata);
 
