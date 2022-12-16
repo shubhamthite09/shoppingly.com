@@ -252,7 +252,7 @@
         add.innerText = "Add to Cart"
         //this where we add functian to add button
         add.addEventListener("click", () => {
-          let localData = JSON.parse(localStorage.getItem("cart")) || []
+          let localData = JSON.parse(localStorage.getItem("shcart")) || []
           let isIncart = false
           for (let i = 0; i < localData.length; i++) {
             if (localData[i].id === element.id) {
@@ -263,8 +263,8 @@
           if (isIncart) {
             alert("Product Already in Cart");
           } else {
-            localData.push({ ...element, quantity: 1 })
-            localStorage.setItem("cart", JSON.stringify(localData))
+            localData.push(element)
+            localStorage.setItem("shcart", JSON.stringify(localData))
             alert("Product Added To Cart");
           }
         })
@@ -275,18 +275,18 @@
 
     // data
     Makedata =[
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1956507686.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick Gift Set",type:"cosmatic_products",price:"45.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/270000/274000/274036/products/1956507645.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Gift Set",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1849034699.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1766653370.jpg?plain&size=600x600",name:"Lumière de Vie® Rose Quartz Roller",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1935915380.jpg?plain&size=600x600",name:"Lumière de Vie® Soothe & Renew Hydrogel Masque",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/270000/274000/274036/products/1827874989.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Skincare Value Kit",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1865413644.jpg?plain&size=600x600",name:"Lumière de Vie® Renewal Hand & Body Crème (Astaxanthin Treatment)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1939501238.jpg?plain&size=600x600",name:"Lumière de Vie® Refine & Moisturize Lip Duo",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1769489571.jpg?plain&size=600x600",name:"Lumière de Vie® Matte Moisturizer",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133542.jpg?plain&size=600x600",name:"Lumière de Vie® Hydrate 3.0 (Hyaluronic Acid Serum)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133509.jpg?plain&size=600x600",name:"Lumière de Vie® The Elixir",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1887211674.jpg?plain&size=600x600",name:"Lumière de Vie® Skincare Brush Collection",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel"}
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1956507686.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick Gift Set",type:"cosmatic_products",price:"45.5",qty:1,brand:"de Vel",id:17},
+{img:"https://img.shop.com/Image/270000/274000/274036/products/1956507645.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Gift Set",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:18},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1849034699.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:19},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1766653370.jpg?plain&size=600x600",name:"Lumière de Vie® Rose Quartz Roller",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:20},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1935915380.jpg?plain&size=600x600",name:"Lumière de Vie® Soothe & Renew Hydrogel Masque",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:21},
+{img:"https://img.shop.com/Image/270000/274000/274036/products/1827874989.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Skincare Value Kit",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:22},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1865413644.jpg?plain&size=600x600",name:"Lumière de Vie® Renewal Hand & Body Crème (Astaxanthin Treatment)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:23},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1939501238.jpg?plain&size=600x600",name:"Lumière de Vie® Refine & Moisturize Lip Duo",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:24},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1769489571.jpg?plain&size=600x600",name:"Lumière de Vie® Matte Moisturizer",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:25},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133542.jpg?plain&size=600x600",name:"Lumière de Vie® Hydrate 3.0 (Hyaluronic Acid Serum)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:26},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133509.jpg?plain&size=600x600",name:"Lumière de Vie® The Elixir",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:27},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1887211674.jpg?plain&size=600x600",name:"Lumière de Vie® Skincare Brush Collection",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:28}
 ]
 make(Makedata)
 

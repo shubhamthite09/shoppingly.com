@@ -265,7 +265,7 @@
       add.innerText = "Add to Cart"
       //this where we add functian to add button
       add.addEventListener("click", () => {
-        let localData = JSON.parse(localStorage.getItem("cart")) || []
+        let localData = JSON.parse(localStorage.getItem("shcart")) || []
         let isIncart = false
         for (let i = 0; i < localData.length; i++) {
           if (localData[i].id === element.id) {
@@ -276,8 +276,8 @@
         if (isIncart) {
           alert("Product Already in Cart");
         } else {
-          localData.push({ ...element, quantity: 1 })
-          localStorage.setItem("cart", JSON.stringify(localData))
+          localData.push(element)
+          localStorage.setItem("shcart", JSON.stringify(localData))
           alert("Product Added To Cart");
         }
       })
@@ -292,69 +292,69 @@
       name: "GABRIELLA - Simulated Diamond Tennis",
       type: "Necklace",
       price: 299.95,
-      qty: 1, brand: "evara"
+      qty: 1, brand: "evara",id:49
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593895.jpg?plain&size=600x600",
       name: "CANDICE - Simulated Diamond Tennis Necklace",
       type: "Necklace",
       price: 249.95,
-      qty: 1, brand: "evara"
+      qty: 1, brand: "evara",id:50
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593896.jpg?plain&size=1600x1600",
       name: "EVA – Convertible Link Drop Earrings",
       type: "Earring",
       price: 49.95,
-      qty: 1, brand: "evara"
+      qty: 1, brand: "evara",id:51
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593897.jpg?plain&size=600x600",
       name: "SASHA – Double Stud Set",
       type: "Earring",
       price: 49.95,
-      qty: 1, brand: "evara"
+      qty: 1, brand: "evara",id:52
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593919.jpg?plain&size=1600x1600",
       name: "LORENA – Dual Stud Chain Earrings",
       type: "Earring",
       price: 99.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:53
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593818.jpg?plain&size=1600x1600",
       name: "CANDICE - Simulated Diamond Tennis Bracelet",
       type: "Bracelet",
       price: 29.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:54
     }, {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593899.jpg?plain&size=1600x1600",
       name: "GABRIELLA - Simulated Diamond Tennis Bracelet",
       type: "Bracelet",
       price: 79.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:55
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593898.jpg?plain&size=1600x1600",
       name: "WINNIE - Sleek Ring Trio",
       type: "Bracelet",
       price: 59.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:56
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1954593918.jpg?plain&size=1600x1600",
       name: "GENEVIEVE - Dual Stone Ring",
       type: "Earring",
       price: 99.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:57
     },
     {
       img: "https://img.shop.com/Image/280000/282000/282022/products/1955444694.jpg?plain&size=1600x1600",
       name: "JORDAN - Triple Stone Ring",
       type: "Earring",
       price: 89.95,
-      qty: 1, brand: "malabar"
+      qty: 1, brand: "malabar",id:58
     },
   ]
   make(jewel);
@@ -398,9 +398,10 @@ document.getElementById("priceSort").addEventListener("change", (e) => {
 
   // brand search
   document.getElementById("input").addEventListener("input", (e) => {
-    console.log(e.target.value);
+    let inpu=e.target.value
+    console.log(inpu.toLowerCase());
     let newData = jewel.filter((el, index) => {
-      return el.brand.toLowerCase().includes(e.target.value);
+      return el.brand.toLowerCase().includes(inpu.toLowerCase());
     });
     make(newData);
   });
