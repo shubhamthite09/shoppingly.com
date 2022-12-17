@@ -868,4 +868,22 @@ body {
     let us=JSON.parse(localStorage.getItem("userlog"))
     console.log(us);
     document.getElementById("na").innerText=us.name
+
+    // filter
+    document.getElementById("filter").addEventListener("change",(e)=>{
+        let c=e.target.value;
+        console.log(c);
+        if(c=="All Department"){
+            window.location.href="./index.html"
+        }else if(c=="jewelry"){
+            window.location.href="./jewelry.html"
+        }else if(c=="beauty"){
+            console.log("yes");
+            window.location.href="./beauty.html"
+        }else if(c=="makeup"){
+            window.location.href="./makeup.html"
+        }else if(c=="Vitamin"){
+            window.location.href="./Vitamin.html"
+        }
+    })
 </script>
