@@ -93,8 +93,8 @@
             gap: 20px;
             margin: auto;
             width: 95%;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
         #body3>div{
@@ -152,7 +152,8 @@
     </div>
   </nav>
   <!-- body -->
-  <div id="body3" style="margin-top: 120px;"></div>
+  <div style="margin-top: 170px; text-align: center;font-size: 30px;">Your Cart Total is: <span id="cart-total"></span></div>
+  <div id="body3" ></div>
    <!-- fotter here -->
    <div id="fotter">
     <div id="about">
@@ -186,6 +187,7 @@
 <script>
   let localData = JSON.parse(localStorage.getItem("shcart"))
   make(localData)
+  total(localData)
   function make(data) {
     document.getElementById("body3").innerHTML=null
     data.forEach((element, index) => {
@@ -199,8 +201,38 @@
       let dis = document.createElement("p")
       dis.innerText = element.brand
       
-      card.append(img, name, price, dis)
+      // new
+      let inc = document.createElement("button")
+      inc.innerText = "+"
+      //this where we increse functian to add button
+      inc.addEventListener("click", () => {
+          element.qty++
+          quantity.innerText = element.qty
+          total(localData)
+      })
+      // quantity here
+      let quantity = document.createElement("span")
+      quantity.innerText = element.qty
+
+      let dec = document.createElement("button")
+      dec.innerText = "-"
+      //this where we decrease functian to add button
+      dec.addEventListener("click", () => {
+        element.qty--
+        quantity.innerText = element.qty
+        total(localData)
+      })
+
+      card.append(img, name, price, dis,inc,quantity,dec)
       document.getElementById("body3").append(card)
     });
+  }
+
+  function total(data) {
+    let prise = 0
+    data.forEach((ele, ind) => {
+      prise += ele.price*ele.qty
+    })
+    document.getElementById("cart-total").innerText = prise
   }
 </script>
