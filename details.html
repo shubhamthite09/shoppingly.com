@@ -163,8 +163,28 @@
         dis.innerText = "Details: " + "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam laudantium commodi obcaecati velit distinctio placeat doloribus itaque aspernatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam laudantium commodi obcaecati velit distinctio placeat doloribus itaque aspernatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam laudantium commodi obcaecati velit distinctio placeat doloribus itaque aspernatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam laudantium commodi obcaecati velit distinctio placeat doloribus itaque aspernatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate ullam laudantium commodi obcaecati velit distinctio placeat doloribus itaque aspernatur."
         let Add = document.createElement("button")
         Add.innerText = "Add To Cart"
+        Add.addEventListener("click", () => {
+          let localData = JSON.parse(localStorage.getItem("shcart")) || []
+          let isIncart = false
+          for (let i = 0; i < localData.length; i++) {
+            if (localData[i].id === element.id) {
+              isIncart = true;
+              break;
+            }
+          }
+          if (isIncart) {
+            alert("Product Already in Cart");
+          } else {
+            localData.push(element)
+            localStorage.setItem("shcart", JSON.stringify(localData))
+            alert("Product Added To Cart");
+          }
+        })
         let Buy = document.createElement("button")
         Buy.innerText = "Buy Now"
+        Buy.addEventListener("click",()=>{
+            window.location.href="./cart.html"
+        })
         document.getElementById("details").append(name, price, brand, dis, Buy, Add)
         document.getElementById("img").setAttribute("src", data.img)
     }
