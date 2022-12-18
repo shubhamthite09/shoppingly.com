@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
   <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,9 +202,8 @@
       </select>
       <select id="brandFilter">
         <option value="">Filter By Brand</option>
-        <option value="Adidas">sugar</option>
-        <option value="Bata">myka</option>
-        <option value="Nike">lakme</option>
+        <option value="malabar">malabar</option>
+        <option value="evara">evara</option>
       </select>
     </div>
   <div id="body3" style=" background-color: white;"></div>
@@ -402,7 +400,7 @@ document.getElementById("priceSort").addEventListener("change", (e) => {
     let inpu=e.target.value
     console.log(inpu.toLowerCase());
     let newData = jewel.filter((el, index) => {
-      return el.brand.toLowerCase().includes(inpu.toLowerCase());
+      return el.name.toLowerCase().includes(inpu.toLowerCase());
     });
     make(newData);
   });

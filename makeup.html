@@ -191,9 +191,8 @@
         </select>
         <select id="brandFilter">
           <option value="">Filter By Brand</option>
-          <option value="Adidas">sugar</option>
-          <option value="Bata">myka</option>
-          <option value="Nike">lakme</option>
+          <option value="Venture">Venture</option>
+          <option value="de Vel">de Vel</option>
         </select>
       </div>
     <!-- body here -->
@@ -276,17 +275,17 @@
     // data
     Makedata =[
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1956507686.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick Gift Set",type:"cosmatic_products",price:"45.5",qty:1,brand:"de Vel",id:17},
-{img:"https://img.shop.com/Image/270000/274000/274036/products/1956507645.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Gift Set",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:18},
+{img:"https://img.shop.com/Image/270000/274000/274036/products/1956507645.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Gift Set",type:"cosmatic_products",price:"200.5",qty:1,brand:"Venture",id:18},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1849034699.jpg?plain&size=600x600",name:"Lumière de Vie® Lumi-Stick",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:19},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1766653370.jpg?plain&size=600x600",name:"Lumière de Vie® Rose Quartz Roller",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:20},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1935915380.jpg?plain&size=600x600",name:"Lumière de Vie® Soothe & Renew Hydrogel Masque",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:21},
-{img:"https://img.shop.com/Image/270000/274000/274036/products/1827874989.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Skincare Value Kit",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:22},
+{img:"https://img.shop.com/Image/270000/274000/274036/products/1827874989.jpg?plain&size=600x600",name:"Lumière de Vie® Hommes Skincare Value Kit",type:"cosmatic_products",price:"200.5",qty:1,brand:"Venture",id:22},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1865413644.jpg?plain&size=600x600",name:"Lumière de Vie® Renewal Hand & Body Crème (Astaxanthin Treatment)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:23},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1939501238.jpg?plain&size=600x600",name:"Lumière de Vie® Refine & Moisturize Lip Duo",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:24},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1769489571.jpg?plain&size=600x600",name:"Lumière de Vie® Matte Moisturizer",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:25},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133542.jpg?plain&size=600x600",name:"Lumière de Vie® Hydrate 3.0 (Hyaluronic Acid Serum)",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:26},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1769489571.jpg?plain&size=600x600",name:"Lumière de Vie® Matte Moisturizer",type:"cosmatic_products",price:"200.5",qty:1,brand:"Venture",id:25},
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1942133542.jpg?plain&size=600x600",name:"Lumière de Vie® Hydrate 3.0 (Hyaluronic Acid Serum)",type:"cosmatic_products",price:"200.5",qty:1,brand:"Venture",id:26},
 {img:"https://img.shop.com/Image/240000/248600/248698/products/1942133509.jpg?plain&size=600x600",name:"Lumière de Vie® The Elixir",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:27},
-{img:"https://img.shop.com/Image/240000/248600/248698/products/1887211674.jpg?plain&size=600x600",name:"Lumière de Vie® Skincare Brush Collection",type:"cosmatic_products",price:"200.5",qty:1,brand:"de Vel",id:28}
+{img:"https://img.shop.com/Image/240000/248600/248698/products/1887211674.jpg?plain&size=600x600",name:"Lumière de Vie® Skincare Brush Collection",type:"cosmatic_products",price:"200.5",qty:1,brand:"Venture",id:28}
 ]
 make(Makedata)
 
@@ -322,7 +321,7 @@ document.getElementById("priceSort").addEventListener("change", (e) => {
   // filter here
   document.getElementById("brandFilter").addEventListener("change", (e) => {
     let brand = e.target.value;
-    let newData = Beauty.filter((el, index) => {
+    let newData = Makedata.filter((el, index) => {
       return el.brand == brand;
     });
     make(newData);
@@ -331,8 +330,8 @@ document.getElementById("priceSort").addEventListener("change", (e) => {
   // brand search
   document.getElementById("input").addEventListener("input", (e) => {
     console.log(e.target.value);
-    let newData = Beauty.filter((el, index) => {
-      return el.brand.toLowerCase().includes(e.target.value);
+    let newData = Makedata.filter((el, index) => {
+      return el.name.toLowerCase().includes(e.target.value);
     });
     make(newData);
   });
